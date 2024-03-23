@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const Header = () => {
+const Header: React.FC = () => {
+  const navItems = ["30 Days of PM", "Newsletter", "Builders Cohort"];
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
     <div className="bg-[#1B1919] py-8 px-5 lg:px-10">
@@ -32,28 +33,26 @@ const Header = () => {
           />
         )}
         <div className="hidden lg:flex flex-row gap-12">
-          <p className="text-center text-stone-300 text-xl font-normal font-['Inter']">
-            30 Days of PM
-          </p>
-          <p className="text-center text-stone-300 text-xl font-normal font-['Inter']">
-            Newsletter
-          </p>
-          <p className="text-center text-stone-300 text-xl font-normal font-['Inter']">
-            Builders Cohort
-          </p>
+          {navItems.map((navItem: string, index: number) => (
+            <p
+              key={index}
+              className="text-center text-stone-300 text-xl font-normal font-['Inter']"
+            >
+              {navItem}
+            </p>
+          ))}
         </div>
       </div>
       {isMenuOpen && (
         <div className="bg-[#1B1919] w-full flex flex-col fixed left-0 gap-6 justify-start items-center pt-8 pb-12 lg:hidden">
-          <p className="text-center text-white text-xl font-normal font-['Poppins']">
-            30 Days of PM
-          </p>
-          <p className="text-center text-white text-xl font-normal font-['Poppins']">
-            Newsletter
-          </p>
-          <p className="text-center text-white text-xl font-normal font-['Poppins']">
-            Builders Cohort
-          </p>
+          {navItems.map((navItem: string, index: number) => (
+            <p
+              key={index}
+              className="text-center text-white text-xl font-normal font-['Poppins']"
+            >
+              {navItem}
+            </p>
+          ))}
         </div>
       )}
     </div>

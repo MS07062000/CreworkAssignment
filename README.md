@@ -1,7 +1,6 @@
 ## Installation
 
-1. Clone the repository: `git clone 
-https://github.com/MS07062000/CreworkAssignment.git`
+1. Clone the repository: `git clone https://github.com/MS07062000/CreworkAssignment.git`
 2. Install dependencies: `npm install`
 
 ## Usage

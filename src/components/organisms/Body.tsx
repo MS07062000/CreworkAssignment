@@ -7,7 +7,7 @@ import generateRandomQuestions from "../../helper/generateRandomQuestions";
 import { useState, useMemo, useEffect } from "react";
 const itemsPerPage = 10; // Number of items to display per page
 
-const Body = () => {
+const Body: React.FC = () => {
   const questions: Question[] = useMemo(() => generateRandomQuestions(100), []);
   const [filterCategory, setFilterCategory] = useState<Category[]>([
     Category.All,
@@ -60,7 +60,7 @@ const Body = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [filterCategory])
+  }, [filterCategory]);
 
   return (
     <div className="bg-[#1B1919] flex-col justify-evenly items-center flex px-4 pb-4 lg:px-0">

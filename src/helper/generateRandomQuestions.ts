@@ -15,11 +15,11 @@ const productManagementQuestions: string[] = [
   "How do you handle product launches in a fast-paced environment?",
 ];
 
-function generateRandomQuestion() {
+function generateRandomQuestion(): Question {
   // Generate a random question title
-  const title =
+  const title:string =
     productManagementQuestions[
-      Math.floor(Math.random() * productManagementQuestions.length)
+    Math.floor(Math.random() * productManagementQuestions.length)
     ];
   // Generate random categories for the question
   const randomCategories: Category[] = [];
@@ -51,9 +51,9 @@ function generateRandomQuestion() {
 
 // Function to generate random questions based on a specified length
 export default function generateRandomQuestions(length: number): Question[] {
-  const questions = [];
+  const questions: Question[] = [];
   for (let i = 0; i < length; i++) {
-    const question = generateRandomQuestion();
+    const question: Question = generateRandomQuestion();
     questions.push(question);
   }
   return questions;
